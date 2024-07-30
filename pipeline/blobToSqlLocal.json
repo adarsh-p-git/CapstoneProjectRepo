@@ -97,7 +97,7 @@
 							},
 							{
 								"source": {
-									"name": "Sales Channel ",
+									"name": "ship-service-level",
 									"type": "String",
 									"physicalType": "UTF8"
 								},
@@ -109,7 +109,7 @@
 							},
 							{
 								"source": {
-									"name": "ship-service-level",
+									"name": "Sales Channel ",
 									"type": "String",
 									"physicalType": "UTF8"
 								},
@@ -314,8 +314,8 @@
 							{
 								"source": {
 									"name": "Unnamed: 22",
-									"type": "Boolean",
-									"physicalType": "BOOLEAN"
+									"type": "String",
+									"physicalType": "UTF8"
 								},
 								"sink": {
 									"name": "Unnamed: 22",
@@ -333,38 +333,11 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Parquet1",
+						"referenceName": "Parquet2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
-					{
-						"referenceName": "SqlServerTable1",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "Copy data3",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "SqlServerSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"enableStaging": false
-				},
-				"inputs": [
 					{
 						"referenceName": "SqlServerTable1",
 						"type": "DatasetReference"
