@@ -1,0 +1,20 @@
+{
+	"name": "Parquet4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageCapstone",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "PLMarch2021.parquet",
+				"container": "marchdata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
