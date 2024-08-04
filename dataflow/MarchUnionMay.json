@@ -22,7 +22,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "CosmosDbNoSqlContainer7",
+						"referenceName": "CosmosDbNoSqlContainer8",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -119,14 +119,13 @@
 				"union1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
-				"     insertable:false,",
+				"     insertable:true,",
 				"     updateable:false,",
-				"     upsertable:true,",
+				"     upsertable:false,",
 				"     format: 'document',",
-				"     partitionKey: ['/Status'],",
 				"     throughput: 400,",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     totalWriteThroughputBudget: 400,",
+				"     skipDuplicateMapInputs: true) ~> sink1"
 			]
 		}
 	}
