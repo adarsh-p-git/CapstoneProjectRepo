@@ -1,0 +1,133 @@
+{
+	"name": "MarchUnionMay",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Parquet4",
+						"type": "DatasetReference"
+					},
+					"name": "MarchData"
+				},
+				{
+					"dataset": {
+						"referenceName": "Parquet5",
+						"type": "DatasetReference"
+					},
+					"name": "MayData"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "CosmosDbNoSqlContainer7",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "select1"
+				},
+				{
+					"name": "derivedColumn2"
+				},
+				{
+					"name": "union1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          index as integer,",
+				"          Sku as string,",
+				"          {Style Id} as string,",
+				"          Catalog as string,",
+				"          Category as string,",
+				"          Weight as string,",
+				"          {TP 1} as string,",
+				"          {TP 2} as string,",
+				"          {MRP Old} as string,",
+				"          {Final MRP Old} as string,",
+				"          {Ajio MRP} as string,",
+				"          {Amazon MRP} as string,",
+				"          {Amazon FBA MRP} as string,",
+				"          {Flipkart MRP} as string,",
+				"          {Limeroad MRP} as string,",
+				"          {Myntra MRP} as string,",
+				"          {Paytm MRP} as string,",
+				"          {Snapdeal MRP} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> MarchData",
+				"source(output(",
+				"          index as integer,",
+				"          Sku as string,",
+				"          {Style Id} as string,",
+				"          Catalog as string,",
+				"          Category as string,",
+				"          Weight as string,",
+				"          TP as string,",
+				"          {MRP Old} as string,",
+				"          {Final MRP Old} as string,",
+				"          {Ajio MRP} as string,",
+				"          {Amazon MRP} as string,",
+				"          {Amazon FBA MRP} as string,",
+				"          {Flipkart MRP} as string,",
+				"          {Limeroad MRP} as string,",
+				"          {Myntra MRP} as string,",
+				"          {Paytm MRP} as string,",
+				"          {Snapdeal MRP} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> MayData",
+				"MarchData derive(TP = {TP 1},",
+				"          Month = \"March\") ~> derivedColumn1",
+				"derivedColumn1 select(mapColumn(",
+				"          index,",
+				"          Sku,",
+				"          {Style Id},",
+				"          Catalog,",
+				"          Category,",
+				"          Weight,",
+				"          {MRP Old},",
+				"          {Final MRP Old},",
+				"          {Ajio MRP},",
+				"          {Amazon MRP},",
+				"          {Amazon FBA MRP},",
+				"          {Flipkart MRP},",
+				"          {Limeroad MRP},",
+				"          {Myntra MRP},",
+				"          {Paytm MRP},",
+				"          {Snapdeal MRP},",
+				"          TP,",
+				"          Month",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"MayData derive(Month = \"May\") ~> derivedColumn2",
+				"derivedColumn2, select1 union(byName: true)~> union1",
+				"union1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:false,",
+				"     updateable:false,",
+				"     upsertable:true,",
+				"     format: 'document',",
+				"     partitionKey: ['/Status'],",
+				"     throughput: 400,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

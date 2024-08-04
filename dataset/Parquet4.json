@@ -15,6 +15,79 @@
 			},
 			"compressionCodec": "snappy"
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "index",
+				"type": "INT32"
+			},
+			{
+				"name": "Sku",
+				"type": "UTF8"
+			},
+			{
+				"name": "Style Id",
+				"type": "UTF8"
+			},
+			{
+				"name": "Catalog",
+				"type": "UTF8"
+			},
+			{
+				"name": "Category",
+				"type": "UTF8"
+			},
+			{
+				"name": "Weight",
+				"type": "UTF8"
+			},
+			{
+				"name": "TP 1",
+				"type": "UTF8"
+			},
+			{
+				"name": "TP 2",
+				"type": "UTF8"
+			},
+			{
+				"name": "MRP Old",
+				"type": "UTF8"
+			},
+			{
+				"name": "Final MRP Old",
+				"type": "UTF8"
+			},
+			{
+				"name": "Ajio MRP",
+				"type": "UTF8"
+			},
+			{
+				"name": "Amazon MRP",
+				"type": "UTF8"
+			},
+			{
+				"name": "Amazon FBA MRP",
+				"type": "UTF8"
+			},
+			{
+				"name": "Flipkart MRP",
+				"type": "UTF8"
+			},
+			{
+				"name": "Limeroad MRP",
+				"type": "UTF8"
+			},
+			{
+				"name": "Myntra MRP",
+				"type": "UTF8"
+			},
+			{
+				"name": "Paytm MRP",
+				"type": "UTF8"
+			},
+			{
+				"name": "Snapdeal MRP",
+				"type": "UTF8"
+			}
+		]
 	}
 }
