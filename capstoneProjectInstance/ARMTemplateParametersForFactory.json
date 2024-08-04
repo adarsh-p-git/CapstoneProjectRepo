@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "capstoneProjectInstance"
+		},
+		"AzureBlobStorageCapstone_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"CosmosDbNoSql1_connectionString": {
+			"value": ""
+		},
+		"CosmosDbNoSql2_connectionString": {
+			"value": ""
+		},
+		"SqlServerLocal_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://capstonestorageaccount12.dfs.core.windows.net/"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://github.com/adarsh-p-git/CapstoneProject/raw/main/amazonSaleReport2.snappy.parquet"
+		},
+		"HttpServer2_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/adarsh-p-git/CapstoneProject/main/amazonSaleData2.csv"
+		},
+		"HttpServer3_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/adarsh-p-git/CapstoneProject/main/International%20sale%20Report.csv"
+		},
+		"HttpServer4_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/adarsh-p-git/CapstoneProject/main/Sale%20Report.csv"
+		}
+	}
+}
