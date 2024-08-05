@@ -1513,7 +1513,7 @@
 				"type": "CosmosDbSqlApiCollection",
 				"schema": {},
 				"typeProperties": {
-					"collectionName": "AmazonSaleData2"
+					"collectionName": "AmazonSaleData3"
 				}
 			},
 			"dependsOn": [
