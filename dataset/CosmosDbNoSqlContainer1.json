@@ -9,7 +9,7 @@
 		"type": "CosmosDbSqlApiCollection",
 		"schema": {},
 		"typeProperties": {
-			"collectionName": "AmazonSalesData1"
+			"collectionName": "AmazonSaleData2"
 		}
 	}
 }
