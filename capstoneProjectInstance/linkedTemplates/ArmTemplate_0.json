@@ -224,7 +224,7 @@
 				"type": "CosmosDbSqlApiCollection",
 				"schema": {},
 				"typeProperties": {
-					"collectionName": "AmazonSaleData5"
+					"collectionName": "AmazonSaleData6"
 				}
 			},
 			"dependsOn": [
