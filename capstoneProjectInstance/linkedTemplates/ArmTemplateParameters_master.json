@@ -20,6 +20,9 @@
 		"SqlServerLocal_connectionString": {
 			"value": ""
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://capstonestorageaccount12.dfs.core.windows.net/"
 		},
@@ -34,6 +37,9 @@
 		},
 		"HttpServer4_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com/adarsh-p-git/CapstoneProject/main/Sale%20Report.csv"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0729-063347-lmq993qr"
 		},
 		"containerUri": {
 			"value": ""

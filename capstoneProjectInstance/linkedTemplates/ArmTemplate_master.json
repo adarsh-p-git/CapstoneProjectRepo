@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServerLocal'"
 		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://capstonestorageaccount12.dfs.core.windows.net/"
@@ -46,6 +50,10 @@
 		"HttpServer4_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com/adarsh-p-git/CapstoneProject/main/Sale%20Report.csv"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0729-063347-lmq993qr"
 		},
 		"containerUri": {
 			"type": "string",
@@ -86,6 +94,9 @@
 					"CosmosDbNoSql2_connectionString": {
 						"value": "[parameters('CosmosDbNoSql2_connectionString')]"
 					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
@@ -100,6 +111,9 @@
 					},
 					"HttpServer4_properties_typeProperties_url": {
 						"value": "[parameters('HttpServer4_properties_typeProperties_url')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},
